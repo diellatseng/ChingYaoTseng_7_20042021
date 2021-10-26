@@ -1,3 +1,7 @@
 [submodule "frontend"]
 	path = frontend
-	url = https://github.com/NicolaPaoletti-18/P7_GroupMania
+	url = https://github.com/diellatseng/ChingYaoTseng_7_20042021/frontend
+
+[submodule "backend"]
+	path = backend
+	url = https://github.com/diellatseng/ChingYaoTseng_7_20042021/backend
