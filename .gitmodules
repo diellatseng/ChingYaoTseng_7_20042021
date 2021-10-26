@@ -1,7 +1,7 @@
 [submodule "frontend"]
 	path = frontend
-	url = https://github.com/diellatseng/ChingYaoTseng_7_20042021_Front
+	url = https://github.com/diellatseng/ChingYaoTseng_7_20042021_frontend
 
 [submodule "backend"]
 	path = backend
-	url = https://github.com/diellatseng/ChingYaoTseng_7_20042021/backend
+	url = https://github.com/diellatseng/ChingYaoTseng_7_20042021_backend
