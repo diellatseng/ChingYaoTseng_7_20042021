@@ -3,7 +3,7 @@ DROP DATABASE IF EXISTS groupmania_database;
 CREATE DATABASE groupmania_database;
 USE groupmania_database;
 
-CREATE TABLE Users (
+CREATE TABLE `User` (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
@@ -12,7 +12,7 @@ CREATE TABLE Users (
     img_url VARCHAR(255)
 );
 
-CREATE TABLE Posts (
+CREATE TABLE `Post` (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     content TEXT NOT NULL,
     author_id INT NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE Posts (
     FOREIGN KEY (author_id) REFERENCES Users(id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
-CREATE TABLE Comments (
+CREATE TABLE `Comment` (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     content TEXT NOT NULL,
     author_id INT NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE Comments (
     FOREIGN KEY (post_id) REFERENCES Posts(id) ON DELETE CASCADE
 );
 
-CREATE TABLE Likes(
+CREATE TABLE `Like`(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     author_id INT NOT NULL,
     target_id INT NOT NULL,
@@ -42,13 +42,13 @@ CREATE TABLE Likes(
 );
 
 ALTER TABLE
-    Posts ADD INDEX posts_author_id_index(author_id);
+    `Post` ADD INDEX posts_author_id_index(author_id);
 ALTER TABLE
-    Comments ADD INDEX comments_author_id_index(author_id);
+    `Comment` ADD INDEX comments_author_id_index(author_id);
 ALTER TABLE
-    Comments ADD INDEX comments_post_id_index(post_id);
+    `Comment` ADD INDEX comments_post_id_index(post_id);
 ALTER TABLE
-    Likes ADD INDEX likes_author_id_index(author_id);
+    `Like` ADD INDEX likes_author_id_index(author_id);
 ALTER TABLE
-    Likes ADD INDEX likes_target_id_index(target_id);
+    `Like` ADD INDEX likes_target_id_index(target_id);
     
