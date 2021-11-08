@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS `groupmania_database`;
+DROP DATABASE IF EXISTS `groupomania_db`;
 
-CREATE DATABASE `groupmania_database`;
-USE `groupmania_database`;
+CREATE DATABASE `groupomania_db`;
+USE `groupomania_db`;
 
 DROP TABLE IF EXISTS `User`;
 CREATE TABLE `User` (
@@ -43,11 +43,8 @@ CREATE TABLE `Like`(
     FOREIGN KEY(target_id) REFERENCES `Post`(id) ON DELETE CASCADE
 );
 
-INSERT user (full_name, email, password, role) VALUES ('Admin', 'admin@mail.com', '1qaz!QAZ', 'ADMIN');  
-UPDATE user
-	 SET 
-     password = '$2b$10$C4hG766j8.tQqDlpKDoZJ.mh5sIPjLxBxj8lnr7melk6kv3UmjJ2m'
-	 WHERE 
-     id = 58;
-     
-select * from user where user.role = 'ADMIN';
+
+# Create Admin user
+INSERT 
+	user (full_name, email, password, role) 
+	VALUES ('Admin', 'admin@mail.com', '$2b$10$C4hG766j8.tQqDlpKDoZJ.mh5sIPjLxBxj8lnr7melk6kv3UmjJ2m', 'ADMIN');  
