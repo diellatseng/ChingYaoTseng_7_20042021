@@ -48,3 +48,8 @@ CREATE TABLE `Like`(
 INSERT 
 	user (full_name, email, password, role) 
 	VALUES ('Admin', 'admin@mail.com', '$2b$10$C4hG766j8.tQqDlpKDoZJ.mh5sIPjLxBxj8lnr7melk6kv3UmjJ2m', 'ADMIN');  
+    
+# Delete Admin user
+DELETE
+	FROM user
+	WHERE id = 1;
